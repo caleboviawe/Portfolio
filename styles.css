@@ -31,6 +31,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
   -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);
   transition: background-color 0.4s ease,
+              transform 0.3s ease,
               -webkit-backdrop-filter 0.4s ease,
               backdrop-filter 0.4s ease;
 }
@@ -42,6 +43,10 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
   backdrop-filter: blur(6px);
 }
 
+#navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
 .nav-links {
   grid-column: 2;
   display: flex;
@@ -49,7 +54,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
 }
 
 #navbar a {
-  position: relative;          /* the fix: anchors each ::after to its own link */
+  position: relative;          
   color: #f5f3ee;
   text-decoration: none;
   padding: 0.5rem 0.9rem;
@@ -62,7 +67,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
   content: '';
   position: absolute;
   left: 0;
-  bottom: -2px;                /* sits on the link's bottom border */
+  bottom: -2px;                
   width: 0;
   height: 2px;
   background-color: #e0b84c;
@@ -83,7 +88,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
 
 #theme-toggle {
   grid-column: 3;
-  justify-self: end;    /* far right edge */
+  justify-self: end;    
   width: 2.25rem;
   height: 2.25rem;
   background: none;
@@ -91,6 +96,10 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
   border-radius: 999px;
   color: #f5f3ee;
   cursor: pointer;
+}
+
+#theme-toggle:hover{
+  color: #e0b84c;
 }
 
 /* Scrolled state: the bar sits over light sections, so switch to dark text */

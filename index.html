@@ -57,26 +57,6 @@
     </section>
 
     <!-- JavaSCript Integration -->
-    <script>
-    const navbar = document.getElementById('navbar');
-    const links = [...navbar.querySelectorAll('a')];
-    const targets = links.map(a => document.querySelector(a.getAttribute('href')));
-
-    function setActive(id) {
-        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-    }
-
-    function update() {
-        const mid = window.innerHeight / 2;
-        let current = targets[0].id;
-        targets.forEach(el => {
-        if (el.getBoundingClientRect().top <= mid) current = el.id;
-        });
-        setActive(current);
-    }
-
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
