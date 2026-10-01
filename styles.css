@@ -135,30 +135,56 @@ section {
     background: linear-gradient(
         to bottom,
         rgb(16, 15, 15) 0%,
-        rgb(16, 15, 15) 90%,
-        #1a1d22 100%
+        rgb(16, 15, 15) 80%,
+        #181b20 100%
     );
     color:white;
 }
 
 /* --------------- About Section --------------- */
 #about{
-    background-color: #1a1d22;
+    /* background-color: #1a1d22; */
+    background: linear-gradient(
+        to bottom,
+        #181b20 0%,
+        #181b20 80%,
+        #2b23351e 100%
+    );
     color:white
 }
 
 /* --------------- Experience Section --------------- */
 #experience{
+    /* background-color:#221c2a1e; */
+    background: linear-gradient(
+        to bottom,
+        #2b23351e 0%,
+        #2b23351e 80%,
+        #2f114f06 100%
+    );
     color: white
 }
 
 /* --------------- Projects Section --------------- */
 #projects{
+    /* background-color: #2f114f06; */
+    background: linear-gradient(
+        to bottom,
+        #2f114f06 0%,
+        #2f114f06 80%,
+        #181b20 100%
+    );
     color: white;
 }
 
 /* --------------- Skills Section --------------- */
 #skills{
+    background: linear-gradient(
+        to bottom,
+        #181b20 0%,
+        #181b20 80%,
+        rgb(16, 15, 15) 100%
+    );
     color: white;
 }
 
