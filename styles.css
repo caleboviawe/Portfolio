@@ -86,6 +86,15 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); }
   outline-offset: 2px;
 }
 
+#nav-logo {
+  grid-column: 1;
+  justify-self: start;       
+  height: 2.25rem;           
+  width: 2.25rem;
+  object-fit: cover;
+  border-radius: 50%;        
+}
+
 #theme-toggle {
   grid-column: 3;
   justify-self: end;    
