@@ -13,10 +13,9 @@ body {
   background: rgb(16, 15, 15);
 }
 
-h1, h2 { font-weight: 400; }
+h1, h2 { font-weight: 500; padding-bottom: 40px; }
 h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
 h2 { font-size: clamp(2rem, 5vw, 3rem); }
-
 
 /* ---------- Navbar ---------- */
 #navbar {
@@ -192,7 +191,120 @@ section {
 #contact {
   min-height: 60vh;
   min-height: 60dvh;
-  color:white
+  padding: 2.5rem 2rem;
+  color: #f5f3ee;
+}
+
+.contact-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* left side | right side */
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding-bottom: 6px;
+}
+
+.contact-left, .contact-right{
+  text-align: left;
+}
+
+.contact-left p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.contact-left h3{
+  padding-bottom: 20px;
+}
+
+.contact-info{
+  margin-bottom: 3rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #e0b84c;
+  color: #e0b84c;  
+  font-size: 24px;                    
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-text h4 {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #f5f3ee;
+}
+
+.contact-text p{
+  font-size: .83rem;
+  color: #c9d3e6;
+}
+
+.social-links{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.social-btn {
+ padding: 1.1em 2em;
+ background: none;
+ border: 2px solid #fff;
+ font-size: 15px;
+ color: #131313;
+ cursor: pointer;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.3s;
+ border-radius: 12px;
+ background-color: #e0b84c;
+ font-weight: bolder;
+ box-shadow: 0 2px 0 2px #000;
+ text-decoration: none;
+}
+
+.social-btn:before {
+ content: "";
+ position: absolute;
+ width: 100px;
+ height: 120%;
+ background-color: #6a3c72;
+ top: 50%;
+ transform: skewX(30deg) translate(-150%, -50%);
+ transition: all 0.5s;
+}
+
+.social-btn:hover {
+ background-color: #181b20;
+ color: #fff;
+ box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.social-btn:hover::before {
+ transform: skewX(30deg) translate(150%, -50%);
+ transition-delay: 0.1s;
+}
+
+.social-btn:active {
+ transform: scale(0.9);
 }
 
 /* --------------- Footer Section --------------- */
