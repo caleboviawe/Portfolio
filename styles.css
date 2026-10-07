@@ -199,7 +199,7 @@ section {
  background-color: #181b20;
  color: #fff;
  box-shadow: 0 2px 0 2px #0d3b66;
- transform: translateY(2.5px);
+ transform: translateY(-2.5px);
 }
 
 .home-btn:hover::before {
@@ -372,6 +372,121 @@ section {
     color: white;
 }
 
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ---------- Main project ---------- */
+.main-project {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem;
+  border-radius: 2rem;                          /* rounded rectangle */
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.4s ease,
+              border-color 0.4s ease,
+              background-color 0.4s ease;
+}
+
+.main-project:hover {
+  border-color: rgba(224, 184, 76, 0.6);
+  background: rgba(224, 184, 76, 0.05);
+  box-shadow:
+    0 0 25px rgba(224, 184, 76, 0.25),          /* tight inner glow */
+    0 0 80px rgba(224, 184, 76, 0.15);          /* wide soft glow */
+}
+
+.main-project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.project-badge {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+}
+
+.main-project-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+/* Gradient-filled word, like "AI smell" in your reference */
+.highlight {
+  background: linear-gradient(90deg, #e0b84c, #f3e2a9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.main-project-desc {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  padding-bottom: 10px;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.project-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #f5f3ee;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-btn:hover { border-color: #e0b84c; transform: translateY(-2px); }
+
+.project-btn.primary {
+  background: linear-gradient(135deg, #e0b84c, #f3e2a9);
+  border-color: transparent;
+  color: #1d2327;
+}
+
+.project-btn:focus-visible { outline: 2px solid #e0b84c; outline-offset: 3px; }
+
+.main-project-media img {
+  display: block;
+  width: 100%;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.project-achievements {
+  display: flex;
+  flex-wrap: wrap;          
+  gap: 0.5rem;
+}
+
+.achievement {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;     
+  background: rgba(94, 176, 250, 0.15);
+  border: 1px solid rgba(94, 176, 250, 0.5);
+  color: #5eb0fa;
+  font-size: .95rem;
+  white-space: nowrap;
+}
+
 
 /* --------------- Skills Section --------------- */
 #skills{
@@ -494,7 +609,7 @@ section {
  background-color: #181b20;
  color: #fff;
  box-shadow: 0 2px 0 2px #0d3b66;
- transform: translateY(2.5px);
+ transform: translateY(-2.5px);
 }
 
 .social-btn:hover::before {
