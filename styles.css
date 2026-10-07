@@ -242,7 +242,7 @@ section {
   .about-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 55% 45%;   /* left side | right side */
+  grid-template-columns: 55% 45%;
   align-items: center;
   gap: 1.5rem 3rem;
   padding-bottom: 6px;
@@ -306,6 +306,57 @@ section {
         #2f114f06 100%
     );
     color: white
+}
+
+.exp-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding-bottom: 6px;
+}
+
+.exp-item {
+  display: flex;
+  align-items: center;      
+  gap: 0.7rem;
+  padding-bottom: 20px;             
+}
+
+.exp-logo {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: .8rem;      
+  overflow: hidden;         
+}
+
+.exp-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exp-list li {
+  padding-bottom:5px;
+}
+
+.exp-techstack {
+  display: flex;
+  flex-wrap: wrap;          
+  gap: 0.5rem;
+}
+
+.techstack-item {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;     
+  background: rgba(224, 184, 76, 0.15);   
+  border: 1px solid rgba(224, 184, 76, 0.5);
+  color: #e0b84c;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 
