@@ -55,3 +55,23 @@ document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el)
 // }, { threshold: 0.4 });
 
 // document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el));
+
+// Main Project Image Popout
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.zoom-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.showModal();
+  });
+});
+
+lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+
+// Click outside the image (on the blurred backdrop) closes it
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) lightbox.close();
+});

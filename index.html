@@ -9,7 +9,6 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
   </head>
   <body>
-    <!-- Loading Screen -->
 
     <!-- Navbar -->
     <nav id="navbar">
@@ -24,6 +23,7 @@
         </div>
           <button id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
     </nav>
+
     <!-- Home Section-->
     <section id="home">
         <div class="home-container">
@@ -166,7 +166,7 @@
                     <span class="project-badge">Capstone Project</span>
                     <h3 class="main-project-title"><span class="highlight">LifeLens</span></h3>
                     <p class="main-project-desc">A machine learning system that turns unstructured trauma-response audio and video into structured medical data for paramedics. Transcription and NLP models extract clinically relevant speech and intervention timestamps (e.g., CPR, intubation), while computer vision models classify injuries (e.g., swelling, abrasions, bruising) and re-identify patients, all with minimal manual input.</p>
-                    <p class="main-project-desc">LifeLens is still in development in partnership with our target market as we progress the project forward as a startup. Along the way I've have worked with various helpful advisors, professionals, and entrepreneurs that have contributed . I'm grateful to be part of an amazing team, and I'm excited for what comes next!</p>
+                    <p class="main-project-desc">LifeLens is still in development in partnership with our target market as we progress the project forward as a startup. Along the way, I've worked with advisors, professionals, and entrepreneurs who have contributed significantly to my growth as an engineer and as a teammate. I'm grateful to be part of an amazing team, and I'm excited for what comes next!</p>
                     <div class="project-achievements">
                         <span class="achievement">Engineering Design Fair Gold Medal (Software Category) </span>
                         <span class="achievement">UofC Launchpad People's Choice Award</span>
@@ -182,7 +182,9 @@
                     </div>
                 </div>
                 <div class="main-project-media">
-                    <img src="images/LifeLens.jpg" alt="LifeLens Poster">
+                    <button class="zoom-trigger" type="button" aria-label="View larger image">
+                        <img src="images/LifeLens.jpg" alt="LifeLens Poster">
+                    </button>
                 </div>
             </div>
             </div>
@@ -259,6 +261,10 @@
             </div>
         </div>
     </section>
+    <dialog id="lightbox" aria-label="Enlarged project image">
+        <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </dialog>
 
     <!-- JavaSCript Integration -->
     <script src="./script.js"></script>
