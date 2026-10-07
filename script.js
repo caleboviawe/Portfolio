@@ -35,3 +35,23 @@ navbar.classList.toggle('nav-hidden', scrollingDown && pastNavbar && !hasFocus);
 lastY = y;
 }, { passive: true });
 ////////
+
+// About Section Scroll Hiding
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle('in-view', entry.isIntersecting);
+  });
+}, { threshold: 0.25 });
+
+document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el));
+// Fade in Once Only Way
+// const fadeObserver = new IntersectionObserver((entries, observer) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('in-view');
+//       observer.unobserve(entry.target);   // stop watching, so it never fades back out
+//     }
+//   });
+// }, { threshold: 0.4 });
+
+// document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el));
