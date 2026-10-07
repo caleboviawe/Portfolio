@@ -140,6 +140,93 @@ section {
     color:white;
 }
 
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 65% 35%;   /* left side | right side */
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding-bottom: 6px;
+}
+
+.home-left h2 {
+  font-size: 40px;
+}
+
+.home-left h3{
+  padding-bottom: 35px;
+}
+
+.home-title span{
+  color: #e0b84c;
+}
+
+.home-links{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-btn {
+ padding: 1.1em 2em;
+ background: none;
+ border: 2px solid #fff;
+ font-size: 15px;
+ color: #131313;
+ cursor: pointer;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.3s;
+ border-radius: 12px;
+ background-color: #e0b84c;
+ font-weight: bolder;
+ box-shadow: 0 2px 0 2px #000;
+ text-decoration: none;
+}
+
+.home-btn:before {
+ content: "";
+ position: absolute;
+ width: 120px;
+ height: 120%;
+ background-color: #6a3c72;
+ top: 50%;
+ transform: skewX(30deg) translate(-150%, -50%);
+ transition: all 0.5s;
+}
+
+.home-btn:hover {
+ background-color: #181b20;
+ color: #fff;
+ box-shadow: 0 2px 0 2px #0d3b66;
+ transform: translateY(2.5px);
+}
+
+.home-btn:hover::before {
+ transform: skewX(30deg) translate(150%, -50%);
+ transition-delay: 0.1s;
+}
+
+.home-btn:active {
+ transform: scale(0.9);
+}
+
+.home-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-photo {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 55%, transparent 100%);
+  mask-image: radial-gradient(circle closest-side, #000 55%, transparent 100%);
+}
 /* --------------- About Section --------------- */
 #about{
     /* background-color: #1a1d22; */
@@ -296,6 +383,7 @@ section {
  background-color: #181b20;
  color: #fff;
  box-shadow: 0 2px 0 2px #0d3b66;
+ transform: translateY(2.5px);
 }
 
 .social-btn:hover::before {
@@ -368,6 +456,31 @@ section {
 .footer-right a:focus-visible {
   outline: 2px solid #e0b84c;
   outline-offset: 2px;
+}
+/* --------------- Animations --------------- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 1st: navbar */
+#navbar {
+  animation: fade-in 0.6s ease backwards;
+}
+
+/* 2nd: left side */
+.home-left {
+  animation: fade-up 0.6s ease 0.4s backwards;
+}
+
+/* 3rd: right side */
+.home-right {
+  animation: fade-up 0.6s ease 1s backwards;
 }
 
 /* --------------- Media --------------- */
