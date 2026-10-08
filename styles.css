@@ -666,11 +666,6 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
 }
 
 .card-desc {
-  /* display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; */
   opacity: 0.65;
   font-size: .80rem;
 }
@@ -693,6 +688,68 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
         rgb(16, 15, 15) 100%
     );
     color: white;
+}
+
+.skills-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  width: 290px;
+  height: 300px;
+  background: #c0afd5;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #554860;
+  border-radius: 15px;
+  box-shadow: -20px 20px 0px -5px #9c87c0;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 1.3em;
+}
+
+.tag__name {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.1em;
+  background-color: #9c87c0;
+  padding: 6px 23px 9px;
+  border-radius: 70em;
+  margin: 8px 6px 8px 0;
+  margin-left: 0px;
+  position: relative;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tag__name::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #554860;
+}
+
+.tag__name::before {
+  left: 7px;
+}
+
+.tag__name::after {
+  right: 7px;
+}
+
+.tag__name:hover {
+  transform: scale(1.1);
+  background-color: #9c87c0;
 }
 
 
