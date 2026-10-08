@@ -587,7 +587,6 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-/* Container: centered over the image, hidden until hover */
 .card-links {
   position: absolute;
   top: 50%;
@@ -624,14 +623,18 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
 
 .card-link:focus-visible { outline: 2px solid #e0b84c; outline-offset: 3px; }
 
-/* Hover or keyboard focus: blur the image and show the buttons */
 .project-card:hover .card-links,
 .project-card:focus-within .card-links {
   opacity: 1;
   transform: translate(-50%, -50%);
 }
 
-/* Touch screens have no hover: keep the buttons visible */
+.project-card:hover .card-preview-img,
+.project-card:focus-within .card-preview-img {
+  filter: blur(8px) brightness(0.6);
+  transform: scale(1.05);
+}
+
 @media (hover: none) {
   .card-links { opacity: 1; transform: translate(-50%, -50%); }
 }
