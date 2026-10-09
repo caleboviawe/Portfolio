@@ -311,7 +311,7 @@ section {
 .exp-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 50% 50%;
   align-items: center;
   gap: 1.5rem 3rem;
   padding-bottom: 6px;
@@ -694,36 +694,38 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  align-items: start;
 }
 
 .card {
   width: 290px;
-  height: 300px;
-  background: #c0afd5;
+  background: #1e2126;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  color: #554860;
+  color: #f5f3ee;
   border-radius: 15px;
-  box-shadow: -20px 20px 0px -5px #9c87c0;
+  box-shadow: -20px 20px 0px -5px #3b3322;
 }
 
 .title {
   font-weight: 900;
   font-size: 1.3em;
+  color: #e0b84c;
 }
+
+.tag{list-style: none;}
 
 .tag__name {
   display: inline-block;
   color: #fff;
   font-size: 1.1em;
-  background-color: #9c87c0;
+  background-color: #2f343b;
   padding: 6px 23px 9px;
   border-radius: 70em;
   margin: 8px 6px 8px 0;
   margin-left: 0px;
   position: relative;
-  text-transform: lowercase;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -735,12 +737,9 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
   top: 40%;
   width: 7px;
   height: 7px;
-  border-radius: 50%;
-  background: #554860;
-}
-
-.tag__name::before {
   left: 7px;
+  border-radius: 50%;
+  background: #e0b84c;
 }
 
 .tag__name::after {
@@ -749,7 +748,8 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
 
 .tag__name:hover {
   transform: scale(1.1);
-  background-color: #9c87c0;
+  background-color: #e0b84c;
+  color: #1d2327;
 }
 
 
