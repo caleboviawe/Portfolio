@@ -385,7 +385,7 @@ section {
   align-items: center;
   gap: 3rem;
   padding: 2.5rem;
-  border-radius: 2rem;                          /* rounded rectangle */
+  border-radius: 2rem;                          
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.4s ease,
@@ -397,8 +397,8 @@ section {
   border-color: rgba(224, 184, 76, 0.6);
   background: rgba(224, 184, 76, 0.05);
   box-shadow:
-    0 0 25px rgba(224, 184, 76, 0.25),          /* tight inner glow */
-    0 0 80px rgba(224, 184, 76, 0.15);          /* wide soft glow */
+    0 0 25px rgba(224, 184, 76, 0.25),          
+    0 0 80px rgba(224, 184, 76, 0.15);          
 }
 
 .main-project-info {
@@ -421,7 +421,6 @@ section {
   line-height: 1.1;
 }
 
-/* Gradient-filled word, like "AI smell" in your reference */
 .highlight {
   background: linear-gradient(90deg, #e0b84c, #f3e2a9);
   -webkit-background-clip: text;
@@ -501,13 +500,13 @@ section {
 #lightbox {
   position: fixed;
   inset: 0;
-  margin: auto;                       /* centers the dialog */
+  margin: auto;                       
   padding: 0;
   border: none;
   background: transparent;
   max-width: 90vw;
   max-height: 90vh;
-  overflow: visible;                  /* lets the close button sit outside the image */
+  overflow: visible;                  
 }
 
 #lightbox img {
@@ -521,7 +520,7 @@ section {
 #lightbox::backdrop {
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);        /* blurs the rest of the website */
+  backdrop-filter: blur(10px);        
 }
 
 .lightbox-close {
@@ -541,14 +540,13 @@ section {
 
 .lightbox-close:hover { color: #e0b84c; border-color: #e0b84c; }
 
-/* Fade in */
 #lightbox[open] { animation: lightbox-in 0.25s ease; }
 @keyframes lightbox-in {
   from { opacity: 0; transform: scale(0.96); }
   to   { opacity: 1; transform: scale(1); }
 }
 
-body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling behind it */
+body:has(#lightbox[open]) { overflow: hidden; }  
 
 .other-projects {
   display: grid;
@@ -986,6 +984,455 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
 
 @media (hover: none) {
   .card-links { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ================= Navbar + Home: responsive ================= */
+
+/* Content stays centred in one column and never stretches edge to edge */
+#home { padding-inline: clamp(1rem, 4vw, 2rem); }
+
+.home-container {
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+/* Replaces the fixed 40px */
+.home-left h2 { font-size: clamp(1.4rem, 4.5vw, 2.5rem); }
+
+/* Big screens: scale everything sized in rem up a step (this affects the whole site) */
+@media (min-width: 1600px) { html { font-size: 112.5%; } }
+@media (min-width: 2200px) { html { font-size: 137.5%; } }
+
+/* ---------- Small laptops ---------- */
+@media (max-width: 1100px) {
+  .home-container {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem 2rem;
+  }
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px) {
+  /* Navbar: logo | links | toggle. Links scroll sideways if they run out of room */
+  #navbar {
+    padding: 0 1rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 0.5rem;
+  }
+
+  .nav-links {
+    justify-self: center;           /* centred when they fit */
+    max-width: 100%;
+    gap: 0;
+    padding-block: 4px;             /* keeps the underline from being clipped */
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  #navbar a {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Home: stack, photo on top, everything centred */
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .home-right { order: -1; }
+  .home-photo { max-width: 15rem; }
+
+  .home-left h3 { padding-bottom: 1.5rem; }
+
+  .home-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 640px) {
+  #navbar { padding: 0 0.75rem; }
+
+  #nav-logo,
+  #theme-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #navbar a {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .home-photo { max-width: 12rem; }
+
+  .home-btn {
+    padding: 0.9em 1.4em;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 420px) {
+  #navbar a {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .home-links {
+    flex-direction: column;
+    align-items: stretch;           
+  }
+
+  .home-btn { text-align: center; }
+}
+
+/* ================= About + Experience: responsive ================= */
+
+/* Centred column that never stretches edge to edge */
+#about,
+#experience { padding-inline: clamp(1rem, 4vw, 2rem); }
+
+.about-container,
+.exp-container,
+#experience > h2 {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+/* Gap between the left column's text and its dotted divider */
+.exp-left { padding-right: 1.5rem; }
+
+.exp-container { align-items: start; }
+
+/* ---------- Small laptops ---------- */
+@media (max-width: 1100px) {
+  .about-container {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem 2rem;
+  }
+
+  .about-photo { min-height: 320px; }
+
+  .exp-container { gap: 1.5rem 2rem; }
+}
+
+/* ---------- Tablets: stack both sections ---------- */
+@media (max-width: 900px) {
+  /* About: text first, photo below it fading in from the top */
+  .about-container { grid-template-columns: 1fr; }
+
+  .about-left > h2,
+  .about-left > h3:first-of-type { text-align: center; }
+
+  .about-right {
+    width: 100%;
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+
+  .about-photo {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+  }
+
+  /* Experience: one column, divider moves from the side to the bottom */
+  #experience > h2 { text-align: center; }
+
+  .exp-container { grid-template-columns: 1fr; gap: 2rem; }
+
+  .exp-left {
+    border-right: none !important;            /* overrides the inline style in the HTML */
+    border-bottom: 1px dotted rgba(224, 184, 76, 0.5);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+
+  .exp-left > h3,
+  .exp-right > h3 {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    padding-bottom: 1.25rem !important;
+    text-align: center;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 640px) {
+  .about-left p {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .about-left h3 { padding-bottom: 1rem; }
+
+  .exp-text { min-width: 0; }                 /* lets long society names wrap */
+
+  /* Smaller logos (the inline 4rem ones need !important) */
+  .exp-logo {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 420px) {
+  .exp-logo {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .exp-item { gap: 0.6rem; }
+}
+
+/* ================= Projects: responsive ================= */
+
+/* Centred column that never stretches edge to edge */
+#projects { padding-inline: clamp(1rem, 4vw, 2rem); }
+
+.projects-container,
+#projects > h2 {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+/* ---------- Small laptops ---------- */
+@media (max-width: 1100px) {
+  .main-project {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .other-projects { gap: 1.25rem; }
+}
+
+/* ---------- Small tablets: 2 cards per row ---------- */
+@media (max-width: 1000px) {
+  .other-projects { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Tablets: stack the featured project ---------- */
+@media (max-width: 900px) {
+  #projects > h2 { text-align: center; }
+
+  .projects-container { gap: 3rem; }
+
+  .main-project {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.5rem;
+  }
+
+  /* Poster on top, centred and capped so it doesn't get huge */
+  .main-project-media {
+    order: -1;
+    width: 100%;
+    max-width: 28rem;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Phones: 1 card per row ---------- */
+@media (max-width: 640px) {
+  .projects-container { gap: 2.5rem; }
+
+  .other-projects { grid-template-columns: 1fr; }
+
+  .main-project {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .main-project-info { gap: 1rem; }
+
+  /* Long award names wrap instead of overflowing */
+  .achievement {
+    white-space: normal;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .project-actions { width: 100%; }
+
+  .project-btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .card-title-row h4 { font-size: 1.3rem; }
+
+  /* Keep the lightbox close button on screen */
+  .lightbox-close { top: 0.5rem; right: 0.5rem; }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 380px) {
+  .main-project { padding: 1rem; }
+  .card-body { padding: 1rem; }
+}
+
+/* ================= Skills: responsive ================= */
+
+/* Centred column that never stretches edge to edge */
+#skills { padding-inline: clamp(1rem, 4vw, 2rem); }
+
+.skills-container,
+#skills > h2 {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+/* Cards fill their grid column instead of a fixed 290px */
+.skills-container { gap: 2rem 1.5rem; }       /* extra row gap leaves room for the offset shadow */
+
+.card {
+  width: 100%;
+  min-width: 0;
+}
+
+.card__tags { flex: 1 1 100%; }               /* tags always sit on their own line under the title */
+
+/* ---------- Small laptops and tablets: 2 per row ---------- */
+@media (max-width: 1100px) {
+  .skills-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px) {
+  #skills > h2 { text-align: center; }
+}
+
+/* ---------- Phones: 1 per row ---------- */
+@media (max-width: 640px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card { padding: 1rem; }
+
+  .tag__name {
+    font-size: 1rem;
+    padding: 5px 20px 8px;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 380px) {
+  .card { box-shadow: -12px 12px 0 -4px #3b3322; }   /* smaller offset so it stays on screen */
+
+  .tag__name { font-size: 0.95rem; }
+}
+
+/* ================= Contact + Footer: responsive ================= */
+
+/* Centred column that never stretches edge to edge.
+   (#contact and #footer are IDs, so they need their own padding rule) */
+#contact,
+#footer { padding-inline: clamp(1rem, 4vw, 2rem); }
+
+#contact > h2,
+.contact-container,
+.footer-container {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+/* ---------- Small laptops ---------- */
+@media (max-width: 1100px) {
+  .contact-container,
+  .footer-container { gap: 1.5rem 2rem; }
+}
+
+/* ---------- Tablets: stack and centre ---------- */
+@media (max-width: 900px) {
+  /* Contact */
+  #contact > h2 { text-align: center; }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-left h3 { text-align: center; }
+
+  /* Contact details stay left-aligned inside, but the block is centred */
+  .contact-right {
+    width: 100%;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .contact-info { margin-bottom: 2rem; }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-left,
+  .footer-right { text-align: center; }
+
+  .footer-right { justify-content: center; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 640px) {
+  .contact-left p { font-size: 0.88rem; }
+
+  .contact-item { gap: 1rem; }
+
+  .contact-text { min-width: 0; }
+  .contact-text p { overflow-wrap: anywhere; }     /* long email addresses wrap instead of overflowing */
+
+  .social-btn {
+    padding: 0.9em 1.4em;
+    font-size: 0.9rem;
+  }
+
+  .footer-right a { padding: 0.5rem 0.6rem; }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 420px) {
+  .contact-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 20px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: stretch;                          /* buttons fill the width, stacked */
+  }
+
+  .social-btn { text-align: center; }
+
+  .footer-right a {
+    padding: 0.4rem 0.45rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* --------------- Light Theme --------------- */

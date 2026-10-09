@@ -37,24 +37,19 @@ lastY = y;
 ////////
 
 // About Section Scroll Hiding
-const fadeObserver = new IntersectionObserver((entries) => {
+const fadeObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    entry.target.classList.toggle('in-view', entry.isIntersecting);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      observer.unobserve(entry.target); 
+    }
   });
-}, { threshold: 0.25 });
+}, {
+  threshold: 0,                            
+  rootMargin: '0px 0px -15% 0px'           
+});
 
 document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el));
-// Fade in Once Only Way
-// const fadeObserver = new IntersectionObserver((entries, observer) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('in-view');
-//       observer.unobserve(entry.target);   // stop watching, so it never fades back out
-//     }
-//   });
-// }, { threshold: 0.4 });
-
-// document.querySelectorAll('.scroll-fade').forEach(el => fadeObserver.observe(el));
 
 // Main Project Image Popout
 const lightbox = document.getElementById('lightbox');
