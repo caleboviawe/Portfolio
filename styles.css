@@ -107,6 +107,8 @@ section {
   border-radius: 50%;        
 }
 
+.logo-light { display: none; }
+
 #theme-toggle {
   grid-column: 3;
   justify-self: end;    
@@ -143,7 +145,7 @@ section {
 .home-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 65% 35%;   /* left side | right side */
+  grid-template-columns: 65% 35%;   
   align-items: center;
   gap: 1.5rem 3rem;
   padding-bottom: 6px;
@@ -298,7 +300,6 @@ section {
 
 /* --------------- Experience Section --------------- */
 #experience{
-    /* background-color:#221c2a1e; */
     background: linear-gradient(
         to bottom,
         #2b23351e 0%,
@@ -362,7 +363,6 @@ section {
 
 /* --------------- Projects Section --------------- */
 #projects{
-    /* background-color: #2f114f06; */
     background: linear-gradient(
         to bottom,
         #2f114f06 0%,
@@ -600,7 +600,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Each button */
 .card-link {
   display: inline-flex;
   align-items: center;
@@ -637,7 +636,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
   .card-links { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* Card text */
 .card-body {
   display: flex;
   flex: 1;
@@ -762,7 +760,7 @@ body:has(#lightbox[open]) { overflow: hidden; }
 .contact-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* left side | right side */
+  grid-template-columns: 1fr 1fr;   
   align-items: center;
   gap: 1.5rem 3rem;
   padding-bottom: 6px;
@@ -877,20 +875,20 @@ body:has(#lightbox[open]) { overflow: hidden; }
 #footer {
   min-height: 18vh;
   min-height: 18svh;
-  padding: 2.5rem 2rem;          /* overrides the 4rem from the shared section rule */
+  padding: 2.5rem 2rem;          
   color: #f5f3ee;
 }
 
 .footer-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* left side | right side */
+  grid-template-columns: 1fr 1fr;   
   align-items: center;
   gap: 1.5rem 3rem;
 }
 
 .footer-left, .footer-right{
-  text-align: left;                 /* content stays left-aligned in each column */
+  text-align: left;                 
 }
 
 .footer-left p {
@@ -963,10 +961,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
 
 /* --------------- Media --------------- */
-/* @media (max-width: 700px) {
-  .footer-container { grid-template-columns: 1fr; }   /* stack, still left-aligned 
-} */
-
 @media (max-width: 1000px) {
   .other-projects { grid-template-columns: repeat(2, 1fr); }
 }
@@ -987,8 +981,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 }
 
 /* ================= Navbar + Home: responsive ================= */
-
-/* Content stays centred in one column and never stretches edge to edge */
 #home { padding-inline: clamp(1rem, 4vw, 2rem); }
 
 .home-container {
@@ -996,10 +988,8 @@ body:has(#lightbox[open]) { overflow: hidden; }
   margin-inline: auto;
 }
 
-/* Replaces the fixed 40px */
 .home-left h2 { font-size: clamp(1.4rem, 4.5vw, 2.5rem); }
 
-/* Big screens: scale everything sized in rem up a step (this affects the whole site) */
 @media (min-width: 1600px) { html { font-size: 112.5%; } }
 @media (min-width: 2200px) { html { font-size: 137.5%; } }
 
@@ -1013,7 +1003,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
 /* ---------- Tablets ---------- */
 @media (max-width: 900px) {
-  /* Navbar: logo | links | toggle. Links scroll sideways if they run out of room */
   #navbar {
     padding: 0 1rem;
     grid-template-columns: auto minmax(0, 1fr) auto;
@@ -1021,10 +1010,10 @@ body:has(#lightbox[open]) { overflow: hidden; }
   }
 
   .nav-links {
-    justify-self: center;           /* centred when they fit */
+    justify-self: center;           
     max-width: 100%;
     gap: 0;
-    padding-block: 4px;             /* keeps the underline from being clipped */
+    padding-block: 4px;             
     overflow-x: auto;
     scrollbar-width: none;
   }
@@ -1036,7 +1025,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
     font-size: 0.9rem;
   }
 
-  /* Home: stack, photo on top, everything centred */
   .home-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1094,8 +1082,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 }
 
 /* ================= About + Experience: responsive ================= */
-
-/* Centred column that never stretches edge to edge */
 #about,
 #experience { padding-inline: clamp(1rem, 4vw, 2rem); }
 
@@ -1107,7 +1093,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
   margin-inline: auto;
 }
 
-/* Gap between the left column's text and its dotted divider */
 .exp-left { padding-right: 1.5rem; }
 
 .exp-container { align-items: start; }
@@ -1126,7 +1111,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
 /* ---------- Tablets: stack both sections ---------- */
 @media (max-width: 900px) {
-  /* About: text first, photo below it fading in from the top */
   .about-container { grid-template-columns: 1fr; }
 
   .about-left > h2,
@@ -1146,13 +1130,12 @@ body:has(#lightbox[open]) { overflow: hidden; }
     mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
   }
 
-  /* Experience: one column, divider moves from the side to the bottom */
   #experience > h2 { text-align: center; }
 
   .exp-container { grid-template-columns: 1fr; gap: 2rem; }
 
   .exp-left {
-    border-right: none !important;            /* overrides the inline style in the HTML */
+    border-right: none !important;            
     border-bottom: 1px dotted rgba(224, 184, 76, 0.5);
     padding-right: 0;
     padding-bottom: 2rem;
@@ -1175,9 +1158,8 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
   .about-left h3 { padding-bottom: 1rem; }
 
-  .exp-text { min-width: 0; }                 /* lets long society names wrap */
+  .exp-text { min-width: 0; }                 
 
-  /* Smaller logos (the inline 4rem ones need !important) */
   .exp-logo {
     width: 3.5rem !important;
     height: 3.5rem !important;
@@ -1195,8 +1177,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 }
 
 /* ================= Projects: responsive ================= */
-
-/* Centred column that never stretches edge to edge */
 #projects { padding-inline: clamp(1rem, 4vw, 2rem); }
 
 .projects-container,
@@ -1234,7 +1214,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
     padding: 1.5rem;
   }
 
-  /* Poster on top, centred and capped so it doesn't get huge */
   .main-project-media {
     order: -1;
     width: 100%;
@@ -1256,7 +1235,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
   .main-project-info { gap: 1rem; }
 
-  /* Long award names wrap instead of overflowing */
   .achievement {
     white-space: normal;
     border-radius: 1rem;
@@ -1272,7 +1250,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
   .card-title-row h4 { font-size: 1.3rem; }
 
-  /* Keep the lightbox close button on screen */
   .lightbox-close { top: 0.5rem; right: 0.5rem; }
 }
 
@@ -1283,8 +1260,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 }
 
 /* ================= Skills: responsive ================= */
-
-/* Centred column that never stretches edge to edge */
 #skills { padding-inline: clamp(1rem, 4vw, 2rem); }
 
 .skills-container,
@@ -1294,15 +1269,14 @@ body:has(#lightbox[open]) { overflow: hidden; }
   margin-inline: auto;
 }
 
-/* Cards fill their grid column instead of a fixed 290px */
-.skills-container { gap: 2rem 1.5rem; }       /* extra row gap leaves room for the offset shadow */
+.skills-container { gap: 2rem 1.5rem; }       
 
 .card {
   width: 100%;
   min-width: 0;
 }
 
-.card__tags { flex: 1 1 100%; }               /* tags always sit on their own line under the title */
+.card__tags { flex: 1 1 100%; }               
 
 /* ---------- Small laptops and tablets: 2 per row ---------- */
 @media (max-width: 1100px) {
@@ -1331,15 +1305,12 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
 /* ---------- Very small phones ---------- */
 @media (max-width: 380px) {
-  .card { box-shadow: -12px 12px 0 -4px #3b3322; }   /* smaller offset so it stays on screen */
+  .card { box-shadow: -12px 12px 0 -4px #3b3322; } 
 
   .tag__name { font-size: 0.95rem; }
 }
 
 /* ================= Contact + Footer: responsive ================= */
-
-/* Centred column that never stretches edge to edge.
-   (#contact and #footer are IDs, so they need their own padding rule) */
 #contact,
 #footer { padding-inline: clamp(1rem, 4vw, 2rem); }
 
@@ -1369,7 +1340,6 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
   .contact-left h3 { text-align: center; }
 
-  /* Contact details stay left-aligned inside, but the block is centred */
   .contact-right {
     width: 100%;
     max-width: 26rem;
@@ -1404,7 +1374,7 @@ body:has(#lightbox[open]) { overflow: hidden; }
   .contact-item { gap: 1rem; }
 
   .contact-text { min-width: 0; }
-  .contact-text p { overflow-wrap: anywhere; }     /* long email addresses wrap instead of overflowing */
+  .contact-text p { overflow-wrap: anywhere; }     
 
   .social-btn {
     padding: 0.9em 1.4em;
@@ -1424,7 +1394,7 @@ body:has(#lightbox[open]) { overflow: hidden; }
 
   .social-links {
     flex-direction: column;
-    align-items: stretch;                          /* buttons fill the width, stacked */
+    align-items: stretch;                          
   }
 
   .social-btn { text-align: center; }
@@ -1459,6 +1429,9 @@ html[data-theme="light"] #theme-toggle:hover {
 html[data-theme="light"] #navbar a.active {
   border-bottom-color: #9a7412;
 }
+
+html[data-theme="light"] .logo-dark  { display: none; }
+html[data-theme="light"] .logo-light { display: block; }
 
 html[data-theme="light"] #home,
 html[data-theme="light"] #skills {
@@ -1536,7 +1509,7 @@ html[data-theme="light"] .highlight {
   background: none;
   -webkit-background-clip: border-box;
   background-clip: border-box;
-  -webkit-text-fill-color: currentColor;   /* uses the color below */
+  -webkit-text-fill-color: currentColor;
   color: #b8860b;
 }
 
