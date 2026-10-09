@@ -75,3 +75,23 @@ lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightb
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) lightbox.close();
 });
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const isLight = theme === 'light';
+  themeToggle.textContent = isLight ? '🌙' : '☀️';
+  themeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+}
+
+setTheme(savedTheme === 'light' ? 'light' : 'dark');
+
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  setTheme(nextTheme);
+  localStorage.setItem('theme', nextTheme);
+});
+////////

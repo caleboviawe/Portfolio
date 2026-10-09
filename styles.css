@@ -987,3 +987,112 @@ body:has(#lightbox[open]) { overflow: hidden; }   /* stops the page scrolling be
 @media (hover: none) {
   .card-links { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+/* --------------- Light Theme --------------- */
+html[data-theme="light"] body {
+  color: #1d2327;
+  background: #f7f5f0;
+}
+
+html[data-theme="light"] #navbar a,
+html[data-theme="light"] #theme-toggle {
+  color: #1d2327;
+}
+
+html[data-theme="light"] #navbar.scrolled {
+  background-color: rgba(247, 245, 240, 0.82);
+}
+
+html[data-theme="light"] #navbar a.active,
+html[data-theme="light"] #navbar a:hover,
+html[data-theme="light"] #theme-toggle:hover {
+  color: #9a7412;
+}
+
+html[data-theme="light"] #navbar a.active {
+  border-bottom-color: #9a7412;
+}
+
+html[data-theme="light"] #home,
+html[data-theme="light"] #skills {
+  background: linear-gradient(to bottom, #f7f5f0 0%, #f7f5f0 80%, #eeece6 100%);
+  color: #1d2327;
+}
+
+html[data-theme="light"] #about,
+html[data-theme="light"] #experience,
+html[data-theme="light"] #projects {
+  background: linear-gradient(to bottom, #eeece6 0%, #eeece6 80%, #f7f5f0 100%);
+  color: #1d2327;
+}
+
+html[data-theme="light"] #contact,
+html[data-theme="light"] #footer {
+  color: #1d2327;
+}
+
+html[data-theme="light"] .main-project,
+html[data-theme="light"] .project-card {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(29, 35, 39, 0.14);
+}
+
+html[data-theme="light"] .main-project:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(154, 116, 18, 0.6);
+}
+
+html[data-theme="light"] .project-badge,
+html[data-theme="light"] .card-badge {
+  background: rgba(29, 35, 39, 0.05);
+  border-color: rgba(29, 35, 39, 0.18);
+}
+
+html[data-theme="light"] .project-btn {
+  color: #1d2327;
+  border-color: rgba(29, 35, 39, 0.3);
+}
+
+html[data-theme="light"] .project-btn.primary {
+  color: #1d2327;
+}
+
+html[data-theme="light"] .card-preview {
+  background: #e4e1d9;
+}
+
+html[data-theme="light"] .card {
+  background: #fff;
+  color: #1d2327;
+  box-shadow: -20px 20px 0 -5px #ddd6c4;
+}
+
+html[data-theme="light"] .tag__name {
+  background-color: #e4e1d9;
+  color: #1d2327;
+}
+
+html[data-theme="light"] .tag__name:hover {
+  background-color: #e0b84c;
+}
+
+html[data-theme="light"] .contact-text h4,
+html[data-theme="light"] .footer-right a {
+  color: #1d2327;
+}
+
+html[data-theme="light"] .contact-text p {
+  color: #51565a;
+}
+
+html[data-theme="light"] .highlight {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: currentColor;   /* uses the color below */
+  color: #b8860b;
+}
+
+html[data-theme="light"] .techstack-item {
+  color: #b8860b;
+}
